@@ -48,7 +48,7 @@ const __APP_INFO__ = {
 };
 
 /** 处理环境变量 */
-const wrapperEnv = (envConf) => {
+const wrapperEnv = envConf => {
   // 默认值
   const ret = {
     VITE_PORT: 80,
@@ -89,7 +89,7 @@ const getPackageSize = options => {
       ++count === files.length &&
         callback(format ? formatBytes(sum(fileListTotal)) : sum(fileListTotal));
     };
-    files.forEach((item) => {
+    files.forEach(item => {
       stat(`${folder}/${item}`, async (err, stats) => {
         if (err) throw err;
         if (stats.isFile()) {

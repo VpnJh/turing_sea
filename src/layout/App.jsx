@@ -1,9 +1,8 @@
-import { useState } from 'react';
 import './App.css';
 
 function App() {
     return (
-        <div className="App">
+    <div className="App">
             <button className="btn">Hello daisyUI</button>
         </div>
     );

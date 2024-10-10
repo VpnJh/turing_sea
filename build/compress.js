@@ -1,9 +1,7 @@
 import { isArray } from "@pureadmin/utils";
 import compressPlugin from "vite-plugin-compression";
 
-export const configCompressPlugin = (
-  compress
-) => {
+export const configCompressPlugin = compress => {
   if (compress === "none") return null;
 
   const gz = {
@@ -30,7 +28,7 @@ export const configCompressPlugin = (
     { k: "both", v: [gz, br] }
   ];
 
-  const plugins= [];
+  const plugins = [];
 
   codeList.forEach(item => {
     if (compress.includes(item.k)) {

@@ -69,35 +69,25 @@ export default defineFlatConfig([
       ]
     }
   },
-  {
-    name: 'react-eslint',
-    files: ['**/*.{js,jsx,mjs,cjs}'],
-    plugins: {
-      react: reactPlugin,
-      'react-hooks': reactHooksPlugin,
-    },
-    languageOptions: {
-      ...reactPlugin.configs.recommended.languageOptions,
-      // parserOptions: {
-      //   ecmaFeatures: {
-      //     jsx: true,
-      //   },
-      // },
-      globals: {
-        ...globals.es2022,
-        ...globals.browser,
-        ...globals.node,
-      },
-    },
-    rules: {
-      ...reactPlugin.configs.recommended.rules,
-      'react/react-in-jsx-scope': 0,
-    },
-    settings: {
-      react: {
-        // 需要显示安装 react
-        version: 'detect',
-      },
-    },
-  }
+  // {
+  //   name: 'react-eslint',
+  //   files: ['**/*.{jsx}'],
+  //   plugins: {
+  //     react: reactPlugin,
+  //     'react-hooks': reactHooksPlugin,
+  //   },
+  //   languageOptions: {
+  //     ...reactPlugin.configs.recommended.languageOptions,
+  //   },
+  //   rules: {
+  //     ...reactPlugin.configs.recommended.rules,
+  //     'react/react-in-jsx-scope': 0,
+  //   },
+  //   settings: {
+  //     react: {
+  //       // 需要显示安装 react
+  //       version: 'detect',
+  //     },
+  //   },
+  // }
 ]);

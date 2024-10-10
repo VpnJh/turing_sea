@@ -9,10 +9,7 @@ import { visualizer } from "rollup-plugin-visualizer";
 import removeConsole from "vite-plugin-remove-console";
 // import { vitePluginFakeServer } from "vite-plugin-fake-server";
 
-export function getPluginsList(
-  VITE_CDN,
-  VITE_COMPRESSION
-) {
+export function getPluginsList(VITE_CDN, VITE_COMPRESSION) {
   const lifecycle = process.env.npm_lifecycle_event;
   return [
     react(),
@@ -29,7 +26,7 @@ export function getPluginsList(
     VITE_CDN ? cdn : null,
     configCompressPlugin(VITE_COMPRESSION),
     // 线上环境删除console
-    removeConsole({ external: ["src/assets/iconfont/iconfont.js"] }),
+    removeConsole(),
     // 打包分析
     lifecycle === "report"
       ? visualizer({ open: true, brotliSize: true, filename: "report.html" })
