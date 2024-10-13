@@ -22,8 +22,8 @@
     "lint:prettier": "prettier --write  \"src/**/*.{html,js,cjs,json,css,scss,md}\"",
     "lint:stylelint": "stylelint --cache --fix \"**/*.{html,jsx,css,scss}\" --cache-location node_modules/.cache/stylelint/",
     "lint": "pnpm lint:eslint && pnpm lint:prettier && pnpm lint:stylelint",
-    "lint-staged" : "lint-staged",
     "prepare": "husky",
+    "lint-staged": "lint-staged",
     "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
@@ -99,13 +99,14 @@
     "pnpm": ">=9"
   },
   "lint-staged": {
-    "**/*.{js,ts,tsx}": [
-      "pnpm run lint"
+    "*.{js,jsx,json,css,scss,html,md}": [
+      "prettier --write",
+      "git add"
     ]
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pnpm run lint"
+      "pre-commit": "pnpm run lint-staged"
     }
   },
   "pnpm": {
