@@ -23,7 +23,6 @@
     "lint:stylelint": "stylelint --cache --fix \"**/*.{html,jsx,css,scss}\" --cache-location node_modules/.cache/stylelint/",
     "lint": "pnpm lint:eslint && pnpm lint:prettier && pnpm lint:stylelint",
     "prepare": "husky",
-    "lint-staged": "lint-staged",
     "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
