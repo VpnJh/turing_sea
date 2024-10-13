@@ -111,7 +111,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pnpm run lint-staged"
+      "pre-commit": "npx exec lint-staged"
     }
   },
   "pnpm": {
