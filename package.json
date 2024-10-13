@@ -97,11 +97,10 @@
     "node": "^18.18.0 || ^20.9.0 || >=21.1.0",
     "pnpm": ">=9"
   },
-  "lint-staged": {
-    "src/**/*.{js,jsx,vue,ts,tsx}": [
-      "eslint --fix",
-      "git add"
-    ]
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   },
   "pnpm": {
     "allowedDeprecatedVersions": {
