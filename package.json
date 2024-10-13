@@ -99,11 +99,13 @@
     "pnpm": ">=9"
   },
   "lint-staged": {
-    "lint": "pnpm run lint"
+    "**/*.{js,ts,tsx}": [
+      "pnpm run lint"
+    ]
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pnpm run lint-staged"
+      "pre-commit": "pnpm run lint"
     }
   },
   "pnpm": {
