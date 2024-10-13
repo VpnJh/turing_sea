@@ -109,11 +109,6 @@
       "stylelint"
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npx exec lint-staged"
-    }
-  },
   "pnpm": {
     "allowedDeprecatedVersions": {
       "are-we-there-yet": "*",
