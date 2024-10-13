@@ -1,5 +1,7 @@
 const index = function () {
-  return {};
+  return {
+    test: 12
+  };
 };
 
 export default index;
