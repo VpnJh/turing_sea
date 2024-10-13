@@ -10,7 +10,10 @@ export default defineFlatConfig([
     ignores: ["**/node_modules", "**/assets", "**/public", "**/bin"],
     files: ["**/*.{js,mjs,cjs,jsx}"],
     languageOptions: {
-      globals: globals.browser
+      globals: {
+        ...globals.browser,
+        process: true
+      }
     }
   },
   pluginJs.configs.recommended,

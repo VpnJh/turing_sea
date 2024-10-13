@@ -1,5 +1,6 @@
 import React from "react";
 
-export const LoginPage = () => {
+const LoginPage = () => {
   return <div>nihao</div>;
 };
+export default LoginPage;

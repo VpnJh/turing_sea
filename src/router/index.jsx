@@ -1,15 +1,18 @@
-import React from "react";
-import { createBrowserRouter } from "react-router-dom";
-import { HomePage } from "../views/home/index.jsx";
-import { LoginPage } from "../views/login/index.jsx";
-
+import React, { lazy } from "react";
+import { createBrowserRouter, Navigate } from "react-router-dom";
+const HomePage = lazy(() => import("@/views/home"));
+const LoginPage = lazy(() => import("@/views/Login"));
 const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Navigate to="/home" replace />
+  },
   {
     path: "/login",
     element: <LoginPage />
   },
   {
-    path: "/",
+    path: "/home",
     element: <HomePage />
     // children: []
   }
