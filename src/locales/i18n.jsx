@@ -2,7 +2,6 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import ChainedBackend from "i18next-chained-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
-import resourcesToBackend from "i18next-resources-to-backend";
 import HttpBackend from "i18next-http-backend";
 import LocalStorageBackend from "i18next-localstorage-backend";
 i18n
