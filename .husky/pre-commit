@@ -1,3 +1,0 @@
-npx --no-install commitlint --edit
-
-pnpm run lint-staged
