@@ -23,6 +23,7 @@
     "lint:stylelint": "stylelint --cache --fix \"**/*.{html,css,scss}\" --cache-location node_modules/.cache/stylelint/",
     "lint": "pnpm lint:eslint && pnpm lint:prettier && pnpm lint:stylelint",
     "lint-staged": "lint-staged",
+    "cz": "git add . && czg",
     "postinstall": "simple-git-hooks"
   },
   "dependencies": {
@@ -53,6 +54,7 @@
     "autoprefixer": "^10",
     "boxen": "^8.0.1",
     "cssnano": "^7.0.6",
+    "czg": "^1.10.1",
     "daisyui": "^4",
     "eslint": "^9.12.0",
     "eslint-config-prettier": "^9.1.0",
@@ -103,7 +105,9 @@
     "commit-msg": "node scripts/verify-commit.js"
   },
   "lint-staged": {
-    "*.{js,jsx}": "eslint --fix"
+    "*.{js,jsx}": "eslint --cache --max-warnings 0  --fix",
+    "*.{html,js,cjs,json,css,scss,md}": "prettier --write",
+    "*.{html,css,scss}": "stylelint --cache --fix \"**/*.{html,css,scss}\" --cache-location node_modules/.cache/stylelint/"
   },
   "pnpm": {
     "allowedDeprecatedVersions": {
