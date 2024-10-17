@@ -106,7 +106,7 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx}": "eslint --cache --max-warnings 0  --fix",
-    "/*.{html,js,cjs,json,css,scss,md}": "prettier --write",
+    "*.{html,js,cjs,json,css,scss,md}": "prettier --write",
     "src/**/*.{html,css,scss}": "stylelint --cache --fix \"**/*.{html,css,scss}\" --cache-location node_modules/.cache/stylelint/"
   },
   "pnpm": {
