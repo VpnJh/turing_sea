@@ -22,7 +22,6 @@
     "lint:prettier": "prettier --write  \"src/**/*.{html,js,cjs,json,css,scss,md}\"",
     "lint:stylelint": "stylelint --cache --fix \"**/*.{html,css,scss}\" --cache-location node_modules/.cache/stylelint/",
     "lint": "pnpm lint:eslint && pnpm lint:prettier && pnpm lint:stylelint",
-    "prepare": "husky",
     "lint-staged": "lint-staged",
     "postinstall": "simple-git-hooks"
   },
@@ -62,7 +61,6 @@
     "eslint-plugin-react": "^7.37.1",
     "eslint-plugin-react-hooks": "^4.6.2",
     "globals": "^15.11.0",
-    "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
     "picocolors": "^1.1.1",
     "postcss": "^8.4.47",
