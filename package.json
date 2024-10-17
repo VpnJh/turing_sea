@@ -105,9 +105,13 @@
     "commit-msg": "node scripts/verify-commit.js"
   },
   "lint-staged": {
-    "*.{js,jsx}": "eslint --cache --max-warnings 0  --fix",
-    "*.{html,js,cjs,json,css,scss,md}": "prettier --write",
-    "*.{html,css,scss}": "stylelint --cache --fix \"**/*.{html,css,scss}\" --cache-location node_modules/.cache/stylelint/"
+    "./*.{html,js,cjs,json,css,scss,md}": "prettier --write",
+    "build/*.js": "prettier --write",
+    "locales/*.js": "prettier --write",
+    "scripts/*.js": "prettier --write",
+    "src/**/*.{js,jsx}": "eslint --cache --max-warnings 0  --fix",
+    "src/**/*.{html,js,cjs,json,css,scss,md}": "prettier --write",
+    "src/**/*.{html,css,scss}": "stylelint --cache --fix \"**/*.{html,css,scss}\" --cache-location node_modules/.cache/stylelint/"
   },
   "pnpm": {
     "allowedDeprecatedVersions": {
