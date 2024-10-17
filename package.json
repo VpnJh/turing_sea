@@ -105,8 +105,8 @@
     "commit-msg": "node scripts/verify-commit.js"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx}": "eslint --cache --max-warnings 0  --fix",
-    "src/**/*.{html,js,cjs,json,css,scss,md}": "prettier --write",
+    "src/**/*.{js,jsx}": "eslint --cache --max-warnings 0  \"{src,mock,build}/**/*.{jsx,js,html}\" --fix",
+    "src/**/*.{html,js,cjs,json,css,scss,md}": "prettier --write  \"src/**/*.{html,js,cjs,json,css,scss,md}\"",
     "src/**/*.{html,css,scss}": "stylelint --cache --fix \"**/*.{html,css,scss}\" --cache-location node_modules/.cache/stylelint/"
   },
   "pnpm": {
