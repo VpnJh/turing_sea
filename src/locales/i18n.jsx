@@ -2,17 +2,16 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import Backend from "i18next-chained-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
-import HttpBackend from "i18next-http-backend";
 import LocalStorageBackend from "i18next-localstorage-backend";
+import HttpBackend from "i18next-http-backend";
+
 i18n
-  .use(LanguageDetector)
   .use(Backend)
+  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     debug: process.env.NODE_ENV === "development",
-    lng: "en",
-    fallbackLng: "en",
-    supportedLngs: ["zh", "en"],
+    supportedLngs: ["zh-CN", "en", "zh"],
     load: "languageOnly",
     interpolation: {
       escapeValue: false

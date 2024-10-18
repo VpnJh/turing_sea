@@ -13,8 +13,7 @@ const userReducer = (state = initialState, action) => {
         ...action.payload
       };
     case clearUserInfo.type:
-      return {};
-
+      return initialState;
     default:
       return state;
   }

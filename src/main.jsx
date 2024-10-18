@@ -9,8 +9,7 @@ import { persistor, store } from "@/store";
 import { PersistGate } from "redux-persist/integration/react";
 
 // 获取浏览器语言
-const lang = localStorage.getItem("lang");
-const browserLanguage = lang || navigator.language || navigator.userLanguage;
+const browserLanguage = navigator.language || navigator.userLanguage;
 i18n.changeLanguage(browserLanguage);
 
 const container = document.getElementById("root");
