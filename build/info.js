@@ -5,7 +5,9 @@ import gradientString from "gradient-string";
 import boxen from "boxen";
 dayjs.extend(duration);
 
-const welcomeMessage = gradientString("cyan", "magenta").multiline(`欢迎联系：志坤，Turning_sea~`);
+const welcomeMessage = gradientString("cyan", "magenta").multiline(
+  `欢迎联系：志坤，Turning_sea~`
+);
 
 const boxenOptions = {
   padding: 0.5,
@@ -35,7 +37,7 @@ export function viteBuildInfo() {
         endTime = dayjs(new Date());
         getPackageSize({
           folder: outDir,
-          callback: (size) => {
+          callback: size => {
             console.log(
               boxen(
                 gradientString("cyan", "magenta").multiline(

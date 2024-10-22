@@ -1,12 +1,15 @@
-import { useState } from 'react';
-import './App.css';
+import React, { Suspense } from "react";
+import { RouterProvider } from "react-router-dom";
+
+import router from "@/router";
+import "./App.css";
 
 function App() {
-    return (
-        <div className="App">
-            <button className="btn">Hello daisyUI</button>
-        </div>
-    );
+  return (
+    <Suspense fallback="..loading">
+      <RouterProvider router={router} />
+    </Suspense>
+  );
 }
 
 export default App;

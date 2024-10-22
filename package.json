@@ -4,10 +4,10 @@
     "name": "timmy.tan",
     "email": "630514215@qq.com"
   },
+  "private": true,
   "type": "module",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "dev": "NODE_OPTIONS=--max-old-space-size=4096 vite",
     "dev.test": "NODE_OPTIONS=--max-old-space-size=4096 vite --mode test",
@@ -18,49 +18,68 @@
     "preview": "vite preview",
     "svgo": "svgo -f . -r",
     "clean:cache": "rimraf .eslintcache && rimraf pnpm-lock.yaml && rimraf node_modules && pnpm store prune && pnpm install",
-    "lint:eslint": "eslint --cache --max-warnings 0  \"{src,mock,build}/**/*.{jsx,js}\" --fix",
-    "lint:prettier": "prettier --write  \"src/**/*.{js,cjs,json,css,scss,html,md}\"",
-    "lint:stylelint": "stylelint --cache --fix \"**/*.{html,jsx,css,scss}\" --cache-location node_modules/.cache/stylelint/",
+    "lint:eslint": "eslint --cache --max-warnings 0  \"{src,mock,build}/**/*.{jsx,js,html}\" --fix",
+    "lint:prettier": "prettier --write  \"src/**/*.{html,js,cjs,json,css,scss,md}\"",
+    "lint:stylelint": "stylelint --cache --fix \"**/*.{html,css,scss}\" --cache-location node_modules/.cache/stylelint/",
     "lint": "pnpm lint:eslint && pnpm lint:prettier && pnpm lint:stylelint",
-    "prepare": "husky",
-    "preinstall": "npx only-allow pnpm"
+    "lint-staged": "lint-staged",
+    "cz": "git add . && czg",
+    "postinstall": "simple-git-hooks"
   },
   "dependencies": {
     "@pureadmin/utils": "^2.4.7",
+    "@reduxjs/toolkit": "^2.3.0",
     "axios": "^1.7.7",
     "dayjs": "^1.11.11",
     "gradient-string": "^3.0.0",
+    "i18next": "^23.15.2",
+    "i18next-browser-languagedetector": "^8.0.0",
+    "i18next-chained-backend": "^4.6.2",
+    "i18next-http-backend": "^2.6.2",
+    "i18next-localstorage-backend": "^4.2.0",
+    "i18next-resources-to-backend": "^1.2.1",
     "mitt": "^3.0.1",
     "pinyin-pro": "^3.25.0",
     "qs": "^6.13.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-i18next": "^15.0.3",
+    "react-redux": "^9.1.2",
+    "react-router-dom": "^6.27.0",
+    "react-virtualized": "^9.22.5",
+    "redux-persist": "^6.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
-    "@commitlint/types": "^19.0.3",
-    "@eslint/js": "^9.4.0",
+    "@commitlint/types": "^19.5.0",
+    "@eslint/js": "^9.12.0",
     "@vitejs/plugin-react": "^1.3.2",
     "autoprefixer": "^10",
     "boxen": "^8.0.1",
     "cssnano": "^7.0.6",
+    "czg": "^1.10.1",
     "daisyui": "^4",
-    "eslint": "^9.4.0",
+    "eslint": "^9.12.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-define-config": "^2.1.0",
     "eslint-plugin-prettier": "^5.1.3",
     "eslint-plugin-react": "^7.37.1",
     "eslint-plugin-react-hooks": "^4.6.2",
-    "husky": "^9.1.6",
+    "globals": "^15.11.0",
+    "lint-staged": "^15.2.10",
+    "picocolors": "^1.1.1",
     "postcss": "^8.4.47",
     "postcss-html": "^1.7.0",
     "postcss-import": "^16.1.0",
     "postcss-scss": "^4.0.9",
     "prettier": "^3.3.3",
     "rollup-plugin-visualizer": "^5.12.0",
+    "sass": "^1.80.3",
+    "simple-git-hooks": "^2.11.1",
     "stylelint": "^16.6.1",
     "stylelint-config-recess-order": "^5.0.1",
+    "stylelint-config-standard": "^36.0.1",
     "stylelint-config-standard-scss": "^13.1.0",
     "stylelint-prettier": "^5.0.0",
     "svgo": "^3.3.2",
@@ -85,6 +104,21 @@
   "engines": {
     "node": "^18.18.0 || ^20.9.0 || >=21.1.0",
     "pnpm": ">=9"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged",
+    "commit-msg": "node scripts/verify-commit.js"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx}": [
+      "eslint --cache --max-warnings 0 --fix"
+    ],
+    "**/*.{html,js,cjs,json,css,scss,md}": [
+      "prettier --write  \"src/**/*.{html,js,cjs,json,css,scss,md}\""
+    ],
+    "**/*.{html,css,scss}": [
+      "stylelint --cache --fix \"**/*.{html,css,scss}\" --cache-location node_modules/.cache/stylelint/"
+    ]
   },
   "pnpm": {
     "allowedDeprecatedVersions": {
