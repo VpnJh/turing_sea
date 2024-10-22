@@ -16,7 +16,7 @@ const LoginPage = () => {
       <button onClick={() => setShowPup(prev => !prev)}>点击触发弹窗</button>
       <AppPopup show={showPopup} onChange={onPopupChange} type={"bottom"}>
         <div className={"bg-[#000]"}>
-          <span>nihao</span>
+          <span className="text-[#fff]">nihao</span>
         </div>
       </AppPopup>
     </div>

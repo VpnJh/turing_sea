@@ -15,6 +15,7 @@ const AppPopup = ({
   custom = false,
   maskClick = true,
   show = true,
+  borderRadius = "initial",
   onChange,
   children
 }) => {
@@ -71,8 +72,8 @@ const AppPopup = ({
             <div
               style={{
                 backgroundColor: bgColor,
-                borderRadius: "20px",
-                padding: isPadding ? "30upx" : undefined
+                borderRadius: borderRadius ? borderRadius : "initial",
+                padding: isPadding ? "30px" : "initial"
               }}
               className={`app-popup__wrapper-box ${
                 isPadding ? "padding_zero" : ""
@@ -103,6 +104,7 @@ AppPopup.propTypes = {
   type: PropTypes.oneOf(["top", "bottom", "center"]),
   custom: PropTypes.bool,
   maskClick: PropTypes.bool,
+  borderRadius: PropTypes.string,
   show: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
   children: PropTypes.node

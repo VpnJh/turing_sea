@@ -49,6 +49,13 @@ export default ({ mode }) => {
       include,
       exclude
     },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          silenceDeprecations: ["legacy-js-api"]
+        }
+      }
+    },
     build: {
       // https://cn.vitejs.dev/guide/build.html#browser-compatibility
       target: "es2015",
