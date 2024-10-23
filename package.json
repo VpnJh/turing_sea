@@ -42,7 +42,6 @@
     "mitt": "^3.0.1",
     "pinyin-pro": "^3.25.0",
     "qs": "^6.13.0",
-    "rc-virtual-list": "^3.14.8",
     "react": "^18",
     "react-dom": "^18",
     "react-i18next": "^15.0.3",
