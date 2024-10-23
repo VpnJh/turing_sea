@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import "./appPopup.scss"; // Assuming you have a similar SCSS file for styling
+import "./index.scss"; // Assuming you have a similar SCSS file for styling
 
 const AppPopup = ({
   isAutoWidth = false,
