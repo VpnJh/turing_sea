@@ -6,7 +6,7 @@ import boxen from "boxen";
 dayjs.extend(duration);
 
 const welcomeMessage = gradientString("cyan", "magenta").multiline(
-  `欢迎联系：志坤，Turning_sea~`
+  `欢迎联系：智坤，Turning_sea~`
 );
 
 const boxenOptions = {
